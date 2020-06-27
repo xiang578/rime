@@ -1,0 +1,11 @@
+name: ryen
+version: "2019-06-03"
+sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - luna_pinyin
+  - luna_pinyin.extended
+  - luna_pinyin.hanyu
+  - luna_pinyin.poetry
+  - luna_pinyin.cn_en
+...

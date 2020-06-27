@@ -1,0 +1,27 @@
+patch:
+  switcher:
+    caption: 〔方案选单〕
+    hotkeys: Control+grave
+  menu:
+    page_size: 9
+  schema_list:
+    - schema: luna_pinyin_simp
+    - schema: luna_pinyin
+    - schema: double_pinyin_flypy
+  # 输入法中英文状态快捷键
+  ascii_composer/switch_key:
+    Caps_Lock: commit_code
+    Control_L: noop
+    Control_R: noop
+    # 按下左 shift 英文字符直接上屏，不需要再次回车，输入法保持英文状态
+    Shift_L: noop
+    Shift_R: noop
+  # app_options:
+  #   com.apple.finder: &a
+  #     ascii_mode: true
+  #     no_inline: true
+  #   com.googlecode.iterm2: *a
+  #   com.alfredapp.Alfred: *a
+  #   com.runningwithcrayons.Alfred-2: *a
+  #   org.vim.MacVim: *a
+  #   com.apple.Terminal: *a

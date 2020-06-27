@@ -1,0 +1,58 @@
+patch:
+  # 引用 `symbols.custom` 文件里面的符号
+  # 'punctuator/import_preset': symbols.custom
+  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
+  # 載入朙月拼音擴充詞庫
+  "translator/dictionary": ryen
+  engine/processors:
+    # - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  # 更改‘西文’为‘英文’，‘增广’为‘扩展集’
+  punctuator:
+    import_preset: symbols.custom
+    half_shape:
+      "#": "#"
+      "`": "`"
+      "~": "~"
+      "@": "@"
+      "=": "="
+      "/": ["/", "÷"]
+      '\': ["、", '\']
+      "'": {pair: ["「", "」"]}
+      "[": "["
+      "]": ["】", "【"]
+      "$": ["¥", "$", "€", "£", "¢", "¤"]
+      "<": ["《", "〈", "«", "<"]
+      ">": ["》", "〉", "»", ">"]
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "英文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: zh_simp
+      reset: 1
+      states: ["漢字","汉字"]
+    - name: ascii_punct
+      states: ["，。", "，．"]
+    - name: extended_charset #生僻字开关
+      states: ["通用", "扩展集"]
+    - name: show_emoji # 该项为表情输入，具体内容可见下文中 [关于表情输入] 部分
+      reset: 1
+      states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+  # 输入双拼码的时候不转化为全拼码
+  translator/preedit_format: {}
+  simplifier:
+    option_name: zh_simp
+  # 分号上屏二候选词；引号上屏三候选词
+  "key_binder/bindings":
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }
+    - { when: paging, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }
