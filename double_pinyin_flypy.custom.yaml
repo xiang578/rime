@@ -13,12 +13,15 @@ patch:
     - selector
     - navigator
     - express_editor
+  recognizer/patterns/reverse_lookup:    # 关闭 ` 键反查功能
+  reverse_lookup:
   # 更改‘西文’为‘英文’，‘增广’为‘扩展集’
+  # 最终符号生效部分
   punctuator:
     import_preset: symbols.custom
     half_shape:
       "#": "#"
-      "`": "`"
+      "`": {commit: "`"}
       "~": "~"
       "@": "@"
       "=": "="

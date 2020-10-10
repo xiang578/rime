@@ -42,7 +42,6 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator
     - script_translator
   filters:
     - simplifier
@@ -123,10 +122,10 @@ translator:
 
 reverse_lookup:
   dictionary: stroke
-  enable_completion: true
-  prefix: "`"
+  enable_completion: false
+  prefix: "z"
   suffix: "'"
-  tips: 〔筆畫〕
+  tips: 〔笔画〕
   preedit_format:
     - xlit/hspnz/一丨丿丶乙/
   comment_format:
