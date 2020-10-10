@@ -3,3 +3,8 @@
 *.log
 tmp/
 build/
+luna_pinyin.userdb/
+ryen.userdb/
+sync/
+terra_pinyin.userdb/
+trash/
