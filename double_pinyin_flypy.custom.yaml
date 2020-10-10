@@ -21,7 +21,7 @@ patch:
     import_preset: symbols.custom
     half_shape:
       "#": "#"
-      "`": {commit: "`"}
+      "`": "`"
       "~": "~"
       "@": "@"
       "=": "="

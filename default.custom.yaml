@@ -5,8 +5,8 @@ patch:
   menu:
     page_size: 9
   schema_list:
-    - schema: luna_pinyin_simp
-    - schema: luna_pinyin
+    #- schema: luna_pinyin_simp
+    #- schema: luna_pinyin
     - schema: double_pinyin_flypy
   # 输入法中英文状态快捷键
   ascii_composer/switch_key:
