@@ -1,0 +1,6 @@
+# Rime user dictionary
+#@/db_name	terra_pinyin.userdb
+#@/db_type	userdb
+#@/rime_version	1.4.0
+#@/tick	0
+#@/user_id	mac_didi
